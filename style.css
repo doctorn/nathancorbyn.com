@@ -1,0 +1,169 @@
+/*
+ * Licensed under GLP v2.0
+ * Copyright (C) Nathan Corbyn 2018
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mplus 1p";
+  overflow: hidden;
+}
+
+h3 {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+h4 {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+p {
+  margin: 0px;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: #0091EA;
+  transition: color 100ms;
+}
+
+a:hover {
+  color: #00B0FF;
+}
+
+a:visited {
+  color: #0091EA;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  color: white;
+  background-color: #777E8D;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  min-width: 70px;
+  height: 30px;
+  transition: margin 100ms, background-color 100ms, box-shadow 100ms;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  padding-left: 35px;
+  padding-top: 6.5px;
+  padding-right: 10px;
+}
+
+.button:hover {
+  margin-top: -2px;
+  margin-bottom: 2px;
+  color: white;
+  background-color: #878E9D;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.button:visited {
+  color: white;
+}
+
+.button img {
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+}
+
+.twitter {
+  background-color: #1DA1F2;
+}
+
+.twitter:hover {
+  background-color: #2DB1FF;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-spacing: 10px;
+}
+
+.row .button {
+  margin-right: 10px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+li:before {
+    content: "-";
+    display: block;
+    float: left;
+    width: 20px;
+}
+
+li p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+#sidebar {
+  position: absolute;
+  padding: 10px;
+  width: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: right;
+}
+
+#sidebar img {
+  margin-top: 15px;
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.divider {
+  position: absolute;
+  top: 25px;
+  left: 300px;
+  height: calc(100% - 50px);
+  border-left: 1px solid #EEE;
+}
+
+.content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: calc(50% - 150px);
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 300px;
+}
+
+.jp {
+  left: calc(50% + 150px);
+}
+
+#copyright {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #CCC;
+  font-size: 10px;
+}
