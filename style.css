@@ -10,6 +10,7 @@
 body {
   font-family: "Mplus 1p";
   overflow: hidden;
+  -webkit-text-size-adjust: none;
 }
 
 h3 {
@@ -175,15 +176,15 @@ li p {
   visibility: hidden;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   #lang {
     visibility: visible;
     background-color: white;
+    left: 0px;
     width: calc(100% - 300px);
     padding: 10px;
     position: fixed;
     bottom: 0;
-    left: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,12 +192,8 @@ li p {
   }
 
   .content {
-    width: calc(100% - 300px);
+    padding-bottom: 80px;
     transition: opacity 300ms;
-  }
-
-  .jp {
-    left: 300px; 
   }
   
   .selector {
@@ -225,7 +222,22 @@ li p {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) and (orientation: portrait) {
+  #lang {
+    left: 300px;
+  }
+  
+  .jp {
+    left: 300px; 
+  }
+  
+  .content {
+    width: calc(100% - 300px);
+  }
+}
+
+@media screen and (max-width: 1100px) and (orientation: landscape), 
+    screen and (max-width: 600px) {
   body {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -254,7 +266,6 @@ li p {
     top: auto;
     width: 100%;
     height: auto;
-    padding-bottom: 80px;
   }
 
   #copyright {
