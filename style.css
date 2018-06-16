@@ -128,6 +128,8 @@ li p {
   top: 0;
   left: 0;
   text-align: right;
+  z-index: 100;
+  background-color: white;
 }
 
 #sidebar img {
@@ -143,6 +145,7 @@ li p {
   left: 300px;
   height: calc(100% - 50px);
   border-left: 1px solid #EEE;
+  z-index: 100;
 }
 
 .content {
@@ -172,7 +175,57 @@ li p {
   visibility: hidden;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+  #lang {
+    visibility: visible;
+    background-color: white;
+    width: calc(100% - 300px);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    width: calc(100% - 300px);
+    transition: opacity 300ms;
+  }
+
+  .jp {
+    left: 300px; 
+  }
+  
+  .selector {
+    padding: 5px;
+  }
+
+  .option {
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .content.invisible {
+    pointer-events: none;
+    opacity: 0;
+    height: 0;
+  }
+
+  .option.invisible {
+     color: #CCC;
+  }
+  
+  .option.invisible:hover {
+     color: #BBB;
+  }
+}
+
+@media screen and (max-width: 700px) {
   body {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -201,7 +254,6 @@ li p {
     top: auto;
     width: 100%;
     height: auto;
-    transition: opacity 300ms;
     padding-bottom: 80px;
   }
 
@@ -212,46 +264,12 @@ li p {
   }
 
   #lang {
-    visibility: visible;
-    background-color: white;
     width: 100%;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.1);
-  }
+    left: 0; 
+  } 
 
   .row {
     align-items: center;
     justify-content: center;
-  }
-
-  .selector {
-    padding: 5px;
-  }
-
-  .option {
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  .content.invisible {
-    pointer-events: none;
-    opacity: 0;
-    height: 0;
-  }
-
-  .option.invisible {
-     color: #CCC;
-  }
-  
-  .option.invisible:hover {
-     color: #BBB;
   }
 }
