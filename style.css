@@ -131,6 +131,7 @@ li p {
   text-align: right;
   z-index: 100;
   background-color: white;
+  min-height: 420px;
 }
 
 #sidebar img {
@@ -222,7 +223,7 @@ li p {
   }
 }
 
-@media screen and (max-width: 1100px) and (orientation: portrait) {
+@media screen and (max-width: 1100px) and (min-height: 480px) {
   #lang {
     left: 300px;
   }
@@ -236,8 +237,8 @@ li p {
   }
 }
 
-@media screen and (max-width: 1100px) and (orientation: landscape), 
-    screen and (max-width: 600px) {
+@media screen and (max-width: 1100px) and (max-height: 480px), 
+    screen and (max-width: 600px){
   body {
     overflow-x: hidden;
     overflow-y: scroll;
