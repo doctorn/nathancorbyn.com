@@ -9,6 +9,14 @@
   box-sizing: border-box;
 }
 
+.Fade, .Fade-fading {
+  transition: opacity 500ms;
+}
+
+.Fade-fading {
+  opacity: 0;
+}
+
 .App-avatar {
   width: 30%;
   min-width: 220px;

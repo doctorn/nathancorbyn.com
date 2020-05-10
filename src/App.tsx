@@ -19,7 +19,7 @@ and compiler construction. I'm normally found on GitHub messing around with
 bits of compilers, but I'm best known for my work in compile-time garbage
 collection.`,
     hobbies: `
-Beyond the realm of 1s and 0s, I enjoy bouldering and I study Japanese.
+Beyond the realm of 1s and 0s, I enjoy bouldering and studying Japanese.
 All of the translations on this site were done by myself, so if you spot a
 mistake please let me know!`,
     projects: "Current work",
@@ -45,10 +45,16 @@ higher-order functions and other advanced language features.`,
   jp: {
     name: "コービン・ネイサン",
     location: "ケンブリッジ、UK",
-    bio: "ケンブリッジ大学でコンピューターサイエンス学生です",
+    bio: "ケンブリッジ大学でのコンピューターサイエンス学生",
     alternate: "View in English",
     about: "私について",
     projects: "最近のプロジェクトは",
+    intro: `こんにちは、！ネイサンと言って、２１歳で、ケンブリッジ大学でコンピューターサイエンス
+を勉強しています。プログラミング言語理論とコンパイラーを作ることに興味があります。普通にGitHubで
+コンパイラーを作って楽しんでるけれども、人々が私を知ってるわけはたいてい私の翻訳時記憶管理の研究
+だからです。`,
+    hobbies: `コンピューターサイエンスの以外に、ボルダリングと日本語の勉強に興味があります。
+私は自分でこのウェブサイトを訳したので、間違いが見えれば教えてください！`,
     contact: "私に連絡",
     howto: "私に連絡すると、{0}でメールする方がいいです。",
     email: "メール",
@@ -72,14 +78,38 @@ export const Project: FunctionComponent<ProjectProps> = props => {
   );
 };
 
-class App extends Component {
+type AppState = {
+  fading: boolean,
+};
+
+class App extends Component<{}, AppState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      fading: false,
+    };
+  }
+
   toggleLanguage() {
-    if (strings.getLanguage() === "en") {
-      strings.setLanguage("jp");
-    } else {
-      strings.setLanguage("en");
-    }
-    this.forceUpdate();
+    this.setState({
+      fading: true,
+    });
+    setTimeout(() => {
+      if (strings.getLanguage() === "en") {
+        strings.setLanguage("jp");
+      } else {
+        strings.setLanguage("en");
+      }
+      setTimeout(() => {
+        this.setState({
+          fading: false,
+        });
+      }, 500);
+    }, 500);
+  }
+
+  fadeClass() {
+    return this.state.fading ? "Fade-fading" : "Fade";
   }
 
   render() {
@@ -87,30 +117,34 @@ class App extends Component {
       <div className="App">
         <div className="App-avatar">
           <img className="App-avatar-image" src={process.env.PUBLIC_URL + 'avatar.png'} alt="Avatar" />
-          <h1>{strings.name}</h1>
-          <h3>{strings.location}</h3>
-          <p>{strings.bio}</p>
+          <h1 className={this.fadeClass()}>{strings.name}</h1>
+          <h3 className={this.fadeClass()}>{strings.location}</h3>
+          <p className={this.fadeClass()}>{strings.bio}</p>
           <div className="App-buttons">
             <a href="https://github.com/doctorn"><FontAwesomeIcon icon={faGithub} /></a>
           </div>
-          <button onClick={this.toggleLanguage.bind(this)}>{strings.alternate}</button>
+          <button className={this.fadeClass()} onClick={this.toggleLanguage.bind(this)}>{strings.alternate}</button>
         </div>
         <div className="App-content">
-          <h2>{strings.about}</h2>
-          <p>{strings.intro}</p>
-          <p>{strings.hobbies}</p>
-          <h2>{strings.projects}</h2>
-          <Project title="micro-mitten" href="https://github.com/doctorn/micro-mitten" link="code">
-            <p>{strings.micro}</p>
-          </Project>
-          <Project title="rust-lang/rust" href="https://github.com/rust-lang/rust" link="code">
-            <p>{strings.rust}</p>
-          </Project>
-          <Project title="mitten-lang/mitten" href="https://mitten-lang.org/" link="website">
-            <p>{strings.mitten}</p>
-          </Project>
-          <h2>{strings.contact}</h2>
-          <p>{strings.formatString(strings.howto, <a href="mailto:me@nathancorbyn.com">me@nathancorbyn.com</a>)}</p>
+          <h2 className={this.fadeClass()}>{strings.about}</h2>
+          <p className={this.fadeClass()}>{strings.intro}</p>
+          <p className={this.fadeClass()}>{strings.hobbies}</p>
+          <h2 className={this.fadeClass()}>{strings.projects}</h2>
+          <div className={this.fadeClass()}>
+            <Project title="micro-mitten" href="https://github.com/doctorn/micro-mitten" link="code">
+              <p>{strings.micro}</p>
+            </Project>
+            <Project title="rust-lang/rust" href="https://github.com/rust-lang/rust" link="code">
+              <p>{strings.rust}</p>
+            </Project>
+            <Project title="mitten-lang/mitten" href="https://mitten-lang.org/" link="website">
+              <p>{strings.mitten}</p>
+            </Project>
+          </div>
+          <h2 className={this.fadeClass()}>{strings.contact}</h2>
+          <p className={this.fadeClass()}>
+            {strings.formatString(strings.howto, <a href="mailto:me@nathancorbyn.com">me@nathancorbyn.com</a>)}
+          </p>
           <p className="App-copyright">Copyright &copy; Nathan Corbyn 2020.</p>
         </div>
       </div>
