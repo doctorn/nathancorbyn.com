@@ -41,6 +41,8 @@ language supporting the kind of compile-time garbage collection proved in concep
 by micro-mitten. At the moment I'm focused on optimising the performance of
 collections and understanding how ASAP's analyses might behave when extended to
 higher-order functions and other advanced language features.`,
+    code: `code`,
+    website: `website`,
   },
   jp: {
     name: "コービン・ネイサン",
@@ -57,6 +59,8 @@ higher-order functions and other advanced language features.`,
     contact: "私に連絡",
     howto: "私に連絡すると、{0}でメールする方がいいです。",
     email: "メール",
+    code: "コード",
+    website: "ウェブサイト",
   },
 });
 
@@ -130,13 +134,13 @@ class App extends Component<{}, AppState> {
           <p className={this.fadeClass()}>{strings.hobbies}</p>
           <h2 className={this.fadeClass()}>{strings.projects}</h2>
           <div className={this.fadeClass()}>
-            <Project title="micro-mitten" href="https://github.com/doctorn/micro-mitten" link="code">
+            <Project title="micro-mitten" href="https://github.com/doctorn/micro-mitten" link={strings.code!}>
               <p>{strings.micro}</p>
             </Project>
-            <Project title="rust-lang/rust" href="https://github.com/rust-lang/rust" link="code">
+            <Project title="rust-lang/rust" href="https://github.com/rust-lang/rust" link={strings.code!}>
               <p>{strings.rust}</p>
             </Project>
-            <Project title="mitten-lang/mitten" href="https://mitten-lang.org/" link="website">
+            <Project title="mitten-lang/mitten" href="https://mitten-lang.org/" link={strings.website!}>
               <p>{strings.mitten}</p>
             </Project>
           </div>
