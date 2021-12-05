@@ -52,20 +52,17 @@
   color: #777e8d;
 }
 
-.Project {
-  width: 100%;
-  height: auto;
+.Project, .Publication {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.Project h4 {
-  margin-bottom: 10px;
+.Publication > *, .Project > * {
+  margin: 0px;
 }
 
-.Project p {
-  padding-left: 10px;
-  padding-right: 10px;
+.Publication h4, .Project h4 {
+  font-size: 12pt;
 }
 
 .App-copyright {
