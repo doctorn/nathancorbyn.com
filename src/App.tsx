@@ -43,7 +43,7 @@ const App: React.FC = () => {
       <div className="App-avatar">
         <img className="App-avatar-image" src={process.env.PUBLIC_URL + 'avatar.png'} alt="Avatar" />
         <h1>Nathan Corbyn</h1>
-        <h3>Cambridge, UK</h3>
+        <h3>Oxford, UK</h3>
         <p>Doctoral Computer Science student at the University of Oxford</p>
         <div className="App-buttons">
           <a href="https://github.com/doctorn"><FontAwesomeIcon icon={faGithub} /></a>
@@ -63,6 +63,14 @@ const App: React.FC = () => {
 
         <h2>Publications</h2>
         <div>
+          <Publication
+            title="Frex: dependently-typed algebraic simplification"
+            authors="Guillame Allais, Edwin Brady, Nathan Corbyn, Ohad Kammar and Jeremy Yallop"
+            where="(Draft) 2022"
+            bibtex="/bib/frex_draft.bib"
+            link="pdf"
+            href="/pdf/frex_dependently_typed_algebraic_simplification.pdf"
+          />
           <Publication
             title="Proof Synthesis with Free Extensions in Intensional Type Theory"
             authors="Nathan Corbyn"
