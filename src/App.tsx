@@ -61,8 +61,24 @@ const App: React.FC = () => {
         <p>Beyond the realm of 1s and 0s, I enjoy bouldering and music. I'm also one to dabble in
         philosophy!</p>
 
-        <h2>Publications</h2>
+        <h2>Writing</h2>
         <div>
+          <Publication
+            title="Generalised free extensions"
+            authors="Nathan Corbyn"
+            where="(Extended abstract) 2022"
+            bibtex="/bib/generalised_free_extensions_ext.bib"
+            link="pdf"
+            href="/pdf/generalised_free_extensions_ext.pdf"
+          />
+          <Publication
+            title="Normalization by evaluation with free extensions"
+            authors="Nathan Corbyn, Ohad Kammar, Sam Lindley, Nachiappan Valliappan and Jeremy Yallop"
+            where="(Extended abstract) 2022"
+            bibtex="/bib/normalization_by_evaluation_with_free_extensions_ext.bib"
+            link="pdf"
+            href="/pdf/normalization_by_evaluation_with_free_extensions_ext.pdf"
+          />
           <Publication
             title="Frex: dependently-typed algebraic simplification"
             authors="Guillame Allais, Edwin Brady, Nathan Corbyn, Ohad Kammar and Jeremy Yallop"
@@ -72,7 +88,7 @@ const App: React.FC = () => {
             href="/pdf/frex_dependently_typed_algebraic_simplification.pdf"
           />
           <Publication
-            title="Proof Synthesis with Free Extensions in Intensional Type Theory"
+            title="Proof synthesis with free extensions in intensional type theory"
             authors="Nathan Corbyn"
             where="Master's Thesis 2021."
             bibtex="/bib/proof_synthesis.bib"
@@ -80,7 +96,7 @@ const App: React.FC = () => {
             href="/pdf/proof_synthesis.pdf"
           />
           <Publication
-            title="Practical Static Memory Management"
+            title="Practical static memory management"
             authors="Nathan Corbyn"
             where="Bachelor's Thesis 2020."
             bibtex="/bib/practical_static_memory_management.bib"
