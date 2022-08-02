@@ -37,6 +37,24 @@ export const Publication: React.FC<PublicationProps> = props => {
   );
 };
 
+type TalkProps = {
+  title: string,
+  where: string,
+  when: string,
+  video: string,
+  slides: string,
+};
+
+export const Talk: React.FC<TalkProps> = props => {
+  return (
+    <div className="Talk">
+      <h4>{props.title}</h4>
+      <p>{props.when} &#8212; {props.where}</p>
+      <p>[<a href={props.slides}>slides</a>][<a href={props.video}>video</a>]</p>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -66,7 +84,7 @@ const App: React.FC = () => {
           <Publication
             title="Generalised free extensions"
             authors="Nathan Corbyn"
-            where="(Extended abstract) 2022"
+            where="(Extended abstract) 2022."
             bibtex="/bib/generalised_free_extensions_ext.bib"
             link="pdf"
             href="/pdf/generalised_free_extensions_ext.pdf"
@@ -74,7 +92,7 @@ const App: React.FC = () => {
           <Publication
             title="Normalization by evaluation with free extensions"
             authors="Nathan Corbyn, Ohad Kammar, Sam Lindley, Nachiappan Valliappan and Jeremy Yallop"
-            where="(Extended abstract) 2022"
+            where="(Extended abstract) 2022."
             bibtex="/bib/normalization_by_evaluation_with_free_extensions_ext.bib"
             link="pdf"
             href="/pdf/normalization_by_evaluation_with_free_extensions_ext.pdf"
@@ -82,7 +100,7 @@ const App: React.FC = () => {
           <Publication
             title="Frex: dependently-typed algebraic simplification"
             authors="Guillame Allais, Edwin Brady, Nathan Corbyn, Ohad Kammar and Jeremy Yallop"
-            where="(Draft) 2022"
+            where="(Draft) 2022."
             bibtex="/bib/frex_draft.bib"
             link="pdf"
             href="/pdf/frex_dependently_typed_algebraic_simplification.pdf"
@@ -90,7 +108,7 @@ const App: React.FC = () => {
           <Publication
             title="Proof synthesis with free extensions in intensional type theory"
             authors="Nathan Corbyn"
-            where="Master's Thesis 2021."
+            where="Master's Thesis 2021"
             bibtex="/bib/proof_synthesis.bib"
             link="pdf"
             href="/pdf/proof_synthesis.pdf"
@@ -98,10 +116,21 @@ const App: React.FC = () => {
           <Publication
             title="Practical static memory management"
             authors="Nathan Corbyn"
-            where="Bachelor's Thesis 2020."
+            where="Bachelor's Thesis 2020"
             bibtex="/bib/practical_static_memory_management.bib"
             link="pdf"
             href="/pdf/practical_static_memory_management.pdf"
+          />
+        </div>
+
+        <h2>Talks</h2>
+        <div>
+          <Talk
+            title="You might not need your garbage collector**"
+            where="Huawei-Edinburgh Joint Lab"
+            when="June 2022"
+            slides="/pdf/you_might_not_need_your_garbage_collector.pdf"
+            video="https://www.bilibili.com/video/BV1Gg411X7g9"
           />
         </div>
 

@@ -52,16 +52,16 @@
   color: #777e8d;
 }
 
-.Project, .Publication {
+.Project, .Publication, .Talk {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.Publication > *, .Project > * {
+.Publication > *, .Project > *, .Talk > * {
   margin: 0px;
 }
 
-.Publication h4, .Project h4 {
+.Publication h4, .Project h4, .Talk > h4 {
   font-size: 12pt;
 }
 
