@@ -126,6 +126,13 @@ const App: React.FC = () => {
         <h2>Talks</h2>
         <div>
           <Talk
+            title="Generalised free extensions"
+            where="ICFP'22 student research competition"
+            when="September 2022"
+            slides="/pdf/generalised_free_extensions_slides.pdf"
+            video="https://youtu.be/htLY-skcUpU?t=1076"
+          />
+          <Talk
             title="You might not need your garbage collector**"
             where="Huawei-Edinburgh Joint Lab"
             when="June 2022"
