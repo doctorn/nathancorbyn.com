@@ -69,7 +69,7 @@ const App: React.FC = () => {
       </div>
       <div className="App-content">
         <h2>About</h2>
-        <p>Hi, I'm Nathan, I'm 23 and I'm currently reading for a DPhil in Computer Science at
+        <p>Hi, I'm Nathan, I'm 24 and I'm currently reading for a DPhil in Computer Science at
         the University of Oxford. I was previously an undergraduate at the University of Cambridge
         and remain a visiting member of the <a href="https://www.cl.cam.ac.uk/research/clash/">
         Cambridge Logical Structures Hub</a>. Broadly speaking, my research interests lie in
