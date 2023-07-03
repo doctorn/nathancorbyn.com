@@ -8,7 +8,7 @@ type ProjectProps = {
   title: string,
 };
 
-export const Project: React.FC<ProjectProps> = props => {
+export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = props => {
   return (
     <div className="Project">
       <h4><a href={props.href}>{props.title}</a></h4>
@@ -100,10 +100,10 @@ const App: React.FC = () => {
           <Publication
             title="Frex: dependently-typed algebraic simplification"
             authors="Guillame Allais, Edwin Brady, Nathan Corbyn, Ohad Kammar and Jeremy Yallop"
-            where="(Draft) 2022."
+            where="(Draft) 2023."
             bibtex="/bib/frex_draft.bib"
-            link="pdf"
-            href="/pdf/frex_dependently_typed_algebraic_simplification.pdf"
+            link="arXiv"
+            href="https://arxiv.org/abs/2306.15375"
           />
           <Publication
             title="Proof synthesis with free extensions in intensional type theory"
