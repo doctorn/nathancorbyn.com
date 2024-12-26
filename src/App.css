@@ -65,6 +65,12 @@
   font-size: 12pt;
 }
 
+.Talk-annotation {
+  font-size: 10pt;
+  font-style: italic;
+  margin: 0px;
+}
+
 .App-copyright {
   font-size: 10px;
   color: #AAA;

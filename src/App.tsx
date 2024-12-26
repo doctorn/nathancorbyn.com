@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faMastodon } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
 
 type ProjectProps = {
@@ -38,10 +38,11 @@ export const Publication: React.FC<PublicationProps> = props => {
 };
 
 type TalkProps = {
+  annotation?: string,
   title: string,
   where: string,
   when: string,
-  video: string,
+  video?: string,
   slides: string,
 };
 
@@ -49,8 +50,12 @@ export const Talk: React.FC<TalkProps> = props => {
   return (
     <div className="Talk">
       <h4>{props.title}</h4>
+      <p className="Talk-annotation">{props.annotation}</p>
       <p>{props.when} &#8212; {props.where}</p>
-      <p>[<a href={props.slides}>slides</a>][<a href={props.video}>video</a>]</p>
+      <p>
+        [<a href={props.slides}>slides</a>]
+        {props.video ? <>[<a href={props.video}>video</a>]</> : <></>}
+      </p>
     </div>
   );
 };
@@ -65,26 +70,34 @@ const App: React.FC = () => {
         <p>Doctoral Computer Science student at the University of Oxford</p>
         <div className="App-buttons">
           <a href="https://github.com/doctorn"><FontAwesomeIcon icon={faGithub} /></a>
+          <a href="https://mathstodon.xyz/@antidote"><FontAwesomeIcon icon={faMastodon} /></a>
         </div>
       </div>
       <div className="App-content">
         <h2>About</h2>
-        <p>Hi, I'm Nathan, I'm 24 and I'm currently reading for a DPhil in Computer Science at
+        <p>Hi, I'm Nathan. I'm currently reading for a DPhil in Computer Science at
         the University of Oxford. I was previously an undergraduate at the University of Cambridge
         and remain a visiting member of the <a href="https://www.cl.cam.ac.uk/research/clash/">
         Cambridge Logical Structures Hub</a>. Broadly speaking, my research interests lie in
         Programming Language Theory; Type Theory; Category Theory; and Compiler Construction.
         I am also a member of the <a href="https://www.cl.cam.ac.uk/~jdy22/projects/frex/">Frex Project</a>.
         </p>
-        <p>Beyond the realm of 1s and 0s, I enjoy bouldering and music. I'm also one to dabble in
-        philosophy!</p>
+        <p>Beyond the realm of 1s and 0s, I enjoy bouldering, music, strategy games and cryptic crosswords.</p>
 
         <h2>Writing</h2>
         <div>
           <Publication
+            title="homotopy.io: A Proof Assistant for Finitely-Presented Globular n-Categories"
+            authors="Nathan Corbyn, Lukas Heidemann, Nick Hu, Chiara Sarti, Calin Tataru and Jamie Vicary"
+            where="9th International Conference on Formal Structures for Computation and Deduction (FSCD 2024)"
+            bibtex="/bib/homotopy_io.bib"
+            link="pdf"
+            href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol299-fscd2024/LIPIcs.FSCD.2024.30/LIPIcs.FSCD.2024.30.pdf"
+          />
+          <Publication
             title="Generalised free extensions"
             authors="Nathan Corbyn"
-            where="(Extended abstract) 2022."
+            where="(Extended abstract) 2022"
             bibtex="/bib/generalised_free_extensions_ext.bib"
             link="pdf"
             href="/pdf/generalised_free_extensions_ext.pdf"
@@ -92,7 +105,7 @@ const App: React.FC = () => {
           <Publication
             title="Normalization by evaluation with free extensions"
             authors="Nathan Corbyn, Ohad Kammar, Sam Lindley, Nachiappan Valliappan and Jeremy Yallop"
-            where="(Extended abstract) 2022."
+            where="(Extended abstract) 2022"
             bibtex="/bib/normalization_by_evaluation_with_free_extensions_ext.bib"
             link="pdf"
             href="/pdf/normalization_by_evaluation_with_free_extensions_ext.pdf"
@@ -125,6 +138,13 @@ const App: React.FC = () => {
 
         <h2>Talks</h2>
         <div>
+          <Talk
+            annotation="Invited speaker"
+            title="Understanding the Classical Monad-Theory Correspondence"
+            where="Tenth Workshop on Mathematically Structured Functional Programming (MSFP 2024)"
+            when="July 2024"
+            slides="/pdf/monads_and_theories.pdf"
+          />
           <Talk
             title="Generalised free extensions"
             where="ICFP'22 student research competition"
@@ -167,7 +187,7 @@ const App: React.FC = () => {
         <p>
           The best way to contact me is by email at <a href="mailto:me@nathancorbyn.com">me@nathancorbyn.com</a>.
         </p>
-        <p className="App-copyright">Copyright &copy; Nathan Corbyn 2020-21.</p>
+        <p className="App-copyright">Copyright &copy; Nathan Corbyn 2020-24.</p>
       </div>
     </div>
   );
